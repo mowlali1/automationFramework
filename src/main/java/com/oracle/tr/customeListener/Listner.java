@@ -18,7 +18,7 @@ import org.testng.Reporter;
 import com.oracle.tr.testBase.TestBase;
 
 
-public class Listner extends TestBase implements ITestListener {
+public class Listner extends TestBase implements ITestListener{
 
 	public void onTestStart(ITestResult result) {
 		Reporter.log("Test started running:" + result.getMethod().getMethodName() + " at:" + ITestResult.STARTED);
@@ -31,10 +31,13 @@ public class Listner extends TestBase implements ITestListener {
 	public void onTestFailure(ITestResult result) {
 		if (!result.isSuccess()) {
 			String userDirector = System.getProperty("user.dir");
-			String customeLocation = "//src//test//java//pageObjectModel//automation//screenshots//";
+			String customeLocation = "/src/main/java/com/oracle/tr/report/";
+			
 			String failureImageFileName = userDirector + customeLocation
 					+ new SimpleDateFormat("MM-dd-yyyy_HH-ss").format(new GregorianCalendar().getTime()) + "-"
 					+ result.getMethod().getMethodName() + ".png";
+			
+			
 			File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
 			try {
@@ -44,6 +47,8 @@ public class Listner extends TestBase implements ITestListener {
 			}
 			Reporter.log("<a href=\"" + failureImageFileName + "\"><img src=\"file:///" + failureImageFileName
 					+ "\" alt=\"\"" + "height='100' width='100'/> " + "<br />");
+			
+			
 			Reporter.setCurrentTestResult(null);
 			Reporter.log(result.getName() + "--Test method failed\n");
 		}
@@ -65,4 +70,5 @@ public class Listner extends TestBase implements ITestListener {
 
 	}
 
+	
 }
