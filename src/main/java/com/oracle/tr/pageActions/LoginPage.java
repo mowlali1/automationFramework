@@ -23,11 +23,19 @@ public class LoginPage extends TestBase {
 	}
 
 	public void clickOnSignIn() {
-		signIn.click();
+		try {
+			signIn.click();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public void clickOnSubmitButton(){
-		submitButton.click();
+		try {
+			submitButton.click();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }

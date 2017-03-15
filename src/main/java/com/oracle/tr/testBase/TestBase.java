@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -18,9 +20,11 @@ public class TestBase {
 	public Properties OR;
 	public FileInputStream file;
 	public File f;
+	public Logger log;
 	
 	public void init() throws IOException{
 		loadFile();
+		log.info("all properties loading");
 		selectBrowser(OR.getProperty("browser"));
 	}
 	
@@ -30,6 +34,9 @@ public class TestBase {
 		f = new File(System.getProperty("user.dir")+"/src/main/java/com/oracle/tr/config/OR.properties");
 		file = new FileInputStream(f);
 		OR.load(file);
+		log = Logger.getLogger(TestBase.class.getName());
+		String log4jConfPath = "log4j.properties";
+		PropertyConfigurator.configure(log4jConfPath);
 	}
 	
 	
@@ -42,13 +49,14 @@ public class TestBase {
 	 */
 	public WebDriver selectBrowser(String browser) {
 		if (browser.equalsIgnoreCase("firefox")) {
+			log.info("creating oject of:-"+browser);
 			driver = new FirefoxDriver();
 		    driver.navigate().to(OR.getProperty("url"));
 			driver.manage().window().maximize();
-			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 			return driver;
 		} else if (browser.equalsIgnoreCase("chrome")) {
-			System.out.println("chrome browser");
+			log.info("creating oject of:-"+browser);
 			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/resources/chromedriver");
 			driver = new ChromeDriver();
 		    driver.navigate().to(OR.getProperty("url"));
@@ -56,6 +64,7 @@ public class TestBase {
 			driver.manage().window().maximize();
 			return driver;
 		} else if (browser.equals("ie") || browser.equals("IE")) {
+			log.info("creating oject of:-"+browser);
 			driver = new InternetExplorerDriver();
 			driver.manage().window().maximize();
 			return driver;
