@@ -103,7 +103,7 @@ public class Registration extends TestBase {
 			return true;
 			
 		} catch (Exception e) {
-			log.info("clicked on logout link"+e.getStackTrace());
+			e.printStackTrace();
            return false;
 		}
 		
@@ -153,6 +153,7 @@ public class Registration extends TestBase {
 			//test.log(LogStatus.PASS,test.addScreenCapture(captureScreen("clickOnRegistor")));
 		} catch (Exception e) {
 			//test.addScreenCapture(captureScreen("clickOnRegistor"));
+			e.printStackTrace();
 
 		}
 	}
