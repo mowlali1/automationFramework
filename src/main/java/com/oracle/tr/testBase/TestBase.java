@@ -67,6 +67,7 @@ public class TestBase {
 	public WebDriver selectBrowser(String browser) {
 		if (browser.equalsIgnoreCase("firefox")) {
 			log.info("creating oject of:-"+browser);
+			System.setProperty("webdriver.firefox.marionette", "/driver/geckodriver");
 			driver = new FirefoxDriver();
 		    driver.navigate().to(OR.getProperty("url"));
 			driver.manage().window().maximize();
@@ -74,7 +75,8 @@ public class TestBase {
 			return driver;
 		} else if (browser.equalsIgnoreCase("chrome")) {
 			log.info("creating oject of:-"+browser);
-			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/resources/chromedriver");
+			//System.setProperty("webdriver.chrome.driver", "/Users/bsingh5/Documents/seleniumgrid/chromedriver");
+			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/driver/chromedriver");
 			driver = new ChromeDriver();
 		    driver.navigate().to(OR.getProperty("url"));
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
