@@ -23,7 +23,7 @@ public class Registration extends TestBase {
 	By userName = By.id("customer_lastname");
 	By password = By.cssSelector("#passwd");
 
-	@FindBy(xpath = "//*[@id='SubmitCreate']")
+	@FindBy(id="SubmitCreate")
 	WebElement registor;
 
 	@FindBy(className = "login")
@@ -291,6 +291,7 @@ public class Registration extends TestBase {
 			String text = accountCreationMessage.getText();
 			return text;
 		} catch (Exception e) {
+			e.printStackTrace();
 		}
 		return "registration was not successful";
 

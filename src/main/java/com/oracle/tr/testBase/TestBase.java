@@ -36,7 +36,7 @@ public class TestBase {
 	public Properties OR;
 	public FileInputStream file;
 	public File f;
-	public Logger log;
+	public static Logger log;
 	Xls_Reader Data;
 	
 	public void init() throws IOException{
