@@ -6,7 +6,7 @@
 </listeners>
   <test name="Test">
     <classes>
-      <class name="com.oracle.tr.test.module1.LoginToautomationpractice"/>
+        <class name="com.oracle.tr.test.module1.LoginToautomationPractice"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

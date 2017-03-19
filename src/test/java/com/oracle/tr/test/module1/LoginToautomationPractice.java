@@ -7,6 +7,7 @@ import org.testng.AssertJUnit;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -16,15 +17,18 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.oracle.tr.pageActions.LoginPage;
+import com.oracle.tr.test.registor.RegistrationTest;
 import com.oracle.tr.testBase.TestBase;
 
 public class LoginToautomationPractice extends TestBase{
 	LoginPage login;
+	public static Logger log = Logger.getLogger(LoginToautomationPractice.class.getName());
 
 	@BeforeClass
 	public void setUp() throws IOException{
       init();
       login = new LoginPage(driver);
+      log.info("############### starting LoginToautomationPractice test############");
 	}
 	
 	@Test

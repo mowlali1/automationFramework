@@ -1,5 +1,6 @@
 package com.oracle.tr.pageActions;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,6 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 import com.oracle.tr.testBase.TestBase;
 
 public class LoginPage extends TestBase {
+	private final static Logger log = Logger.getLogger(LoginPage.class.getName());
 	WebDriver driver;
 	
 	@FindBy(css=".login")
@@ -31,6 +33,7 @@ public class LoginPage extends TestBase {
 
 	public void clickOnsignIn(){
 		signIn.click();
+		log.info("click on:-"+signIn.toString());
 	}
 	
 	public void enterEmailAddress(String emailAddress){

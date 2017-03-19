@@ -7,6 +7,8 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
 import java.util.NoSuchElementException;
@@ -40,12 +42,23 @@ import com.oracle.tr.excelReader.Xls_Reader;
 public class TestBase {
 	public static WebDriver driver;
 	public Properties OR;
+	public Properties config;
 	public FileInputStream file;
+	public FileOutputStream file1;
 	public File f;
-	public static Logger log;
-	Xls_Reader Data;
+	public File f1;
+	public static Logger log = Logger.getLogger(TestBase.class.getName());
+	public Xls_Reader Data;
 
 	public void init() throws IOException {
+		setData();
+		System.out.println(System.getProperty("url"));
+		config.setProperty("url", System.getProperty("url"));
+		config.setProperty("userName", System.getProperty("userName"));
+		config.setProperty("password", System.getProperty("password"));
+		config.setProperty("browser", System.getProperty("browser"));
+		config.store(file1, null);
+		file1.close();
 		loadFile();
 		log.info("all properties loading");
 		selectBrowser(OR.getProperty("browser"));
@@ -57,7 +70,6 @@ public class TestBase {
 		f = new File(System.getProperty("user.dir") + "/src/main/java/com/oracle/tr/config/OR.properties");
 		file = new FileInputStream(f);
 		OR.load(file);
-		log = Logger.getLogger(TestBase.class.getName());
 		String log4jConfPath = "log4j.properties";
 		PropertyConfigurator.configure(log4jConfPath);
 	}
@@ -270,6 +282,16 @@ public class TestBase {
 		catch (Exception e) {
 			System.out.println(e.getLocalizedMessage());
 		}
+
+	}
+	
+	public void setData() throws IOException{
+		config = new Properties();
+		System.out.println(System.getProperty("user.dir"));
+		f1 = new File(System.getProperty("user.dir") + "/src/main/java/com/oracle/tr/config/config.properties");
+		file1 = new FileOutputStream(f1, true);
+		//config.
+
 	}
 
 }

@@ -3,6 +3,7 @@ package com.oracle.tr.pageActions;
 import java.util.Iterator;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,6 +16,7 @@ import com.oracle.tr.testBase.TestBase;
 
 
 public class Registration extends TestBase {
+	private final static Logger log = Logger.getLogger(Registration.class.getName());
 
 	WebDriver driver;
 

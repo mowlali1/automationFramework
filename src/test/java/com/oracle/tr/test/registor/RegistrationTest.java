@@ -3,6 +3,7 @@ package com.oracle.tr.test.registor;
 import java.io.IOException;
 import java.math.BigDecimal;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.testng.AssertJUnit;
 import org.testng.SkipException;
@@ -16,6 +17,7 @@ import com.oracle.tr.pageActions.Registration;
 import com.oracle.tr.testBase.TestBase;
 
 public class RegistrationTest extends TestBase{
+	public static Logger log = Logger.getLogger(RegistrationTest.class.getName());
 	Registration reg;
 	LoginPage login;
 	int i = 0;
