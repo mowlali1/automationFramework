@@ -17,6 +17,7 @@ import com.oracle.tr.testBase.TestBase;
 
 public class RegistrationTest extends TestBase{
 	Registration reg;
+	LoginPage login;
 	int i = 0;
 	
 	String emailAddress = "email" + System.currentTimeMillis() + "@gmail.com";
@@ -35,6 +36,7 @@ public class RegistrationTest extends TestBase{
 	public void setUp() throws IOException{
       init();
      reg = new Registration(driver);
+     login = new LoginPage(driver);
 	}
 	
 	@DataProvider(name = "TestRegistor")
@@ -65,8 +67,7 @@ public class RegistrationTest extends TestBase{
 		String sDay = String.valueOf(bigdecimal.longValue());
 		System.out.println(sDay);
 		String year = String.valueOf(bigdecimal1.longValue());
-
-		
+        login.clickOnsignIn();
 		String message = reg.register(emailAddress, passowrd, sDay, selectMonth, year, customerfirstName,
 				customerLastName, firstName, lastName, address);
 		

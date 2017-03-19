@@ -268,7 +268,6 @@ public class Registration extends TestBase {
 	public String register(String emailAddress,String passowrd, String selectDay, String selectMonth,
 			String selectYear, String customerfirstName,String customerLastName, String firstName, String lastName, String address) throws InterruptedException {
 		try {
-			clickOnLogin();
 			setEmail(emailAddress);
 			clickOnRegistor();
 			selectMailGender();

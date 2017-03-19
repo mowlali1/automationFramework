@@ -29,12 +29,9 @@ public class LoginToautomationPractice extends TestBase{
 	
 	@Test
 	public void testLoginToautomationpractice(){
-		login.clickOnSignIn();
-		driver.findElement(By.cssSelector("#email")).sendKeys("userName");
-		driver.findElement(By.id("passwd")).sendKeys("password");
-		login.clickOnSubmitButton();
-		String test = driver.findElement(By.xpath("//*[contains(text(),'Invalid email address.')]")).getText();
-		AssertJUnit.assertEquals("Invalid12 email address.", test);
+		login.loginToApplication("testEmail", "password");
+		String text = login.getInvalidLoginText();
+		Assert.assertEquals("Invalid12 email address.", text);
 	}
 	
 	@AfterClass
