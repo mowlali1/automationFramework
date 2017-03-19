@@ -18,7 +18,7 @@ import org.testng.annotations.Test;
 import com.oracle.tr.pageActions.LoginPage;
 import com.oracle.tr.testBase.TestBase;
 
-public class LoginToautomationpractice extends TestBase{
+public class LoginToautomationPractice extends TestBase{
 	LoginPage login;
 
 	@BeforeClass

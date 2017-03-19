@@ -31,7 +31,7 @@ public class Listner extends TestBase implements ITestListener{
 	public void onTestFailure(ITestResult result) {
 		if (!result.isSuccess()) {
 			String userDirector = System.getProperty("user.dir");
-			String customeLocation = "/src/main/java/com/oracle/tr/report/";
+			String customeLocation = "/src/main/java/com/oracle/tr/screenshot/";
 			
 			String failureImageFileName = userDirector + customeLocation
 					+ new SimpleDateFormat("MM-dd-yyyy_HH-ss").format(new GregorianCalendar().getTime()) + "-"
