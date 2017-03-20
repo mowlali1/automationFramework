@@ -33,11 +33,21 @@ public class LoginToautomationPractice extends TestBase{
 	
 	@Test
 	public void testLoginToautomationpractice(){
-		log.info("----starting testLoginToautomationpractice test-----");
-		login.loginToApplication("testEmail", "password");
-		String text = login.getInvalidLoginText();
-		Assert.assertEquals("Invalid email address.", text);
-		log.info("----Finished testLoginToautomationpractice test-----");
+		try {
+			log.info("****starting testLoginToautomationpractice test****");
+			login.loginToApplication("testEmail", "password");
+			String text = login.getInvalidLoginText();
+			Assert.assertEquals("Invalid email address.", text);
+			log.info("****Finished testLoginToautomationpractice test****");
+		} 
+		catch(AssertionError e){
+			log.error("testLoginToautomationpractice", e.fillInStackTrace());
+			Assert.assertTrue(false);
+		}
+		catch (Exception e) {
+			log.error("testLoginToautomationpractice", e.fillInStackTrace());
+			Assert.assertTrue(false);
+		}
 	}
 	
 	@AfterClass

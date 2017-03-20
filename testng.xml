@@ -1,18 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite">
+<suite name="Regression Suite">
 <listeners>
 <listener class-name="com.oracle.tr.customeListener.Listner"></listener>
 </listeners>
-  <test name="Test">
+  <test name="Regression Suite" preserve-order="true">
     <classes>
         <class name="com.oracle.tr.test.module1.LoginToautomationPractice"/>
+        <class name="com.oracle.tr.test.HomePageTest.VerifyNavigationMenu"/>
+        <class name="com.oracle.tr.test.HomePageTest.VerifygetYourTiresRightTextMessage"/>
+        <!-- <class name="com.oracle.tr.test.HomePageTest.VerifyFaceBookLink"/> -->
+         <class name="com.oracle.tr.test.HomePageTest.VerifyTotalLinksOfHomePage"/>
+         <class name="com.oracle.tr.test.HomePageTest.VerifyWhyTireRackLinks"/>
     </classes>
   </test> <!-- Test -->
-  
+ <!--  
   <test name="VerifyNavigationMenu">
     <classes>
-        <class name="com.oracle.tr.test.HomePageTest.VerifyNavigationMenu"/>
+        
     </classes>
-  </test> <!-- Test -->
+  </test> Test
+  <test name="VerifygetYourTiresRightTextMessage">
+    <classes>
+        
+    </classes>
+  </test> Test
+  <test name="VerifyFaceBookLink">
+    <classes>
+        
+    </classes>
+  </test> Test
+  <test name="VerifyTotalLinksOfHomePage">
+    <classes>
+       
+    </classes>
+  </test> Test
+  <test name="VerifyWhyTireRackLinks">
+    <classes>
+        
+    </classes>
+  </test> Test -->
 </suite> <!-- Suite -->

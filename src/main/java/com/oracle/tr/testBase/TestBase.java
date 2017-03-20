@@ -61,7 +61,6 @@ public class TestBase {
 		config.store(file1, null);
 		file1.close();*/
 		loadFile();
-		log.info("all properties loading");
 		selectBrowser(OR.getProperty("browser"));
 	}
 
@@ -83,7 +82,6 @@ public class TestBase {
 	 */
 	public WebDriver selectBrowser(String browser) {
 		if (browser.equalsIgnoreCase("firefox")) {
-			log.info("creating oject of:-" + browser);
 			System.setProperty("webdriver.firefox.marionette", "/driver/geckodriver");
 			driver = new FirefoxDriver();
 			driver.navigate().to(OR.getProperty("url"));
