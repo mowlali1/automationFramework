@@ -30,10 +30,12 @@ public class VerifyFaceBookLink extends TestBase{
 		 Set<String> window = driver.getWindowHandles();
 		String parentWindow = window.iterator().next();
 		String childWindow = window.iterator().next();
+		System.out.println(window);
+		System.out.println(window.size());
 		 driver.switchTo().window(childWindow);
 		 String text = driver.getCurrentUrl();
 		 Thread.sleep(3000);
-		 driver.switchTo().window("childWindow").close();
+		 driver.switchTo().window(childWindow).close();
 		 driver.switchTo().window(parentWindow);
 		 Assert.assertEquals(text, "https://www.facebook.com/tirerack");
 	}
