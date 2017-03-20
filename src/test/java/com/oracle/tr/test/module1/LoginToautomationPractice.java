@@ -28,19 +28,21 @@ public class LoginToautomationPractice extends TestBase{
 	public void setUp() throws IOException{
       init();
       login = new LoginPage(driver);
-      log.info("############### starting LoginToautomationPractice test############");
+      
 	}
 	
 	@Test
 	public void testLoginToautomationpractice(){
+		log.info("----starting testLoginToautomationpractice test-----");
 		login.loginToApplication("testEmail", "password");
 		String text = login.getInvalidLoginText();
-		Assert.assertEquals("Invalid12 email address.", text);
+		Assert.assertEquals("Invalid email address.", text);
+		log.info("----Finished testLoginToautomationpractice test-----");
 	}
 	
 	@AfterClass
 	public void closeBrowser(){
-		
+		driver.quit();
 	}
 
 }

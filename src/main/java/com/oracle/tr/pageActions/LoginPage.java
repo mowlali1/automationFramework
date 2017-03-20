@@ -11,7 +11,7 @@ import com.oracle.tr.testBase.TestBase;
 
 public class LoginPage extends TestBase {
 	private final static Logger log = Logger.getLogger(LoginPage.class.getName());
-	WebDriver driver;
+	//WebDriver driver;
 	
 	@FindBy(css=".login")
 	WebElement signIn;
@@ -37,6 +37,8 @@ public class LoginPage extends TestBase {
 	}
 	
 	public void enterEmailAddress(String emailAddress){
+		log.info("element is:"+this.emailAddress.toString());
+		log.info("enterign email address");
 		this.emailAddress.sendKeys(emailAddress);
 	}
 	

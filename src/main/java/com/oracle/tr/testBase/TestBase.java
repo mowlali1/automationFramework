@@ -27,6 +27,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -51,14 +52,14 @@ public class TestBase {
 	public Xls_Reader Data;
 
 	public void init() throws IOException {
-		setData();
+		/*setData();
 		System.out.println(System.getProperty("url"));
 		config.setProperty("url", System.getProperty("url"));
 		config.setProperty("userName", System.getProperty("userName"));
 		config.setProperty("password", System.getProperty("password"));
 		config.setProperty("browser", System.getProperty("browser"));
 		config.store(file1, null);
-		file1.close();
+		file1.close();*/
 		loadFile();
 		log.info("all properties loading");
 		selectBrowser(OR.getProperty("browser"));
@@ -87,14 +88,14 @@ public class TestBase {
 			driver = new FirefoxDriver();
 			driver.navigate().to(OR.getProperty("url"));
 			driver.manage().window().maximize();
-			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			return driver;
 		} else if (browser.equalsIgnoreCase("chrome")) {
 			log.info("creating oject of:-" + browser);
-			// System.setProperty("webdriver.chrome.driver",
-			// "/Users/bsingh5/Documents/seleniumgrid/chromedriver");
 			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/driver/chromedriver");
-			driver = new ChromeDriver();
+	        ChromeOptions options = new ChromeOptions();
+	        options.addArguments("--test-type");
+	        driver = new ChromeDriver(options);
 			driver.navigate().to(OR.getProperty("url"));
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			driver.manage().window().maximize();
@@ -289,7 +290,7 @@ public class TestBase {
 		config = new Properties();
 		System.out.println(System.getProperty("user.dir"));
 		f1 = new File(System.getProperty("user.dir") + "/src/main/java/com/oracle/tr/config/config.properties");
-		file1 = new FileOutputStream(f1, true);
+		file1 = new FileOutputStream(f1, false);
 		//config.
 
 	}

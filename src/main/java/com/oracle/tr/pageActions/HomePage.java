@@ -32,5 +32,15 @@ public class HomePage extends TestBase{
 		Thread.sleep(1000);
 		
 	}
+	
+	public int countAllNavigationMenu(){
+		try {
+			log.info("counting navigation menu options");
+			return driver.findElements(By.xpath(".//*[@id='pageLinks']/ul/li")).size();
+		} catch (Exception e) {
+			log.error("countAllNavigationMenu failed", e.fillInStackTrace());
+		}
+		return 0;
+	}
 
 }

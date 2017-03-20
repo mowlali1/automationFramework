@@ -9,4 +9,10 @@
         <class name="com.oracle.tr.test.module1.LoginToautomationPractice"/>
     </classes>
   </test> <!-- Test -->
+  
+  <test name="VerifyNavigationMenu">
+    <classes>
+        <class name="com.oracle.tr.test.HomePageTest.VerifyNavigationMenu"/>
+    </classes>
+  </test> <!-- Test -->
 </suite> <!-- Suite -->
