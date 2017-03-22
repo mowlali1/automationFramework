@@ -89,11 +89,12 @@ public class TestBase {
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			return driver;
 		} else if (browser.equalsIgnoreCase("chrome")) {
+			https://sites.google.com/a/chromium.org/chromedriver/downloads
 			log.info("creating oject of:-" + browser);
 			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/driver/chromedriver");
-	        ChromeOptions options = new ChromeOptions();
-	        options.addArguments("--test-type");
-	        driver = new ChromeDriver(options);
+	        //ChromeOptions options = new ChromeOptions();
+	        //options.addArguments("--test-type");
+	        driver = new ChromeDriver();
 			driver.navigate().to(OR.getProperty("url"));
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			driver.manage().window().maximize();
