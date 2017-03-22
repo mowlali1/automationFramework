@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import org.apache.log4j.Logger;
 import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -32,10 +33,12 @@ public class VerifyTotalLinksOfHomePage extends TestBase {
 			log.info("***verifyTotalLinksOfHomePage finished***");
 		} catch (AssertionError e) {
 			log.error("verifyTotalLinksOfHomePage", e.fillInStackTrace());
+			Reporter.log(e.fillInStackTrace().toString());
 			Assert.assertTrue(false);
 		}
 		catch (Exception e) {
 			log.error("verifyTotalLinksOfHomePage", e.fillInStackTrace());
+			Reporter.log(e.fillInStackTrace().toString());
 			Assert.assertTrue(false);
 		}
 	}

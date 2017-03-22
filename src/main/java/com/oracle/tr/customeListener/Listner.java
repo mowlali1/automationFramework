@@ -21,11 +21,11 @@ import com.oracle.tr.testBase.TestBase;
 public class Listner extends TestBase implements ITestListener{
 
 	public void onTestStart(ITestResult result) {
-		Reporter.log("Test started running:" + result.getMethod().getMethodName() + " at:" + ITestResult.STARTED);
+		Reporter.log("Test started running:" + result.getMethod().getMethodName());
 	}
 
 	public void onTestSuccess(ITestResult result) {
-
+		Reporter.log("Test run is successful:" + result.getMethod().getMethodName());
 	}
 
 	public void onTestFailure(ITestResult result) {
@@ -55,7 +55,7 @@ public class Listner extends TestBase implements ITestListener{
 	}
 
 	public void onTestSkipped(ITestResult result) {
-
+		Reporter.log("Test is skipped:" + result.getMethod().getMethodName());
 	}
 
 	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
