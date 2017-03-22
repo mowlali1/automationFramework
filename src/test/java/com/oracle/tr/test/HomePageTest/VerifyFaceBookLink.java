@@ -1,6 +1,7 @@
 package com.oracle.tr.test.HomePageTest;
 
 import java.io.IOException;
+import java.util.Iterator;
 import java.util.Set;
 
 import org.apache.log4j.Logger;
@@ -26,8 +27,9 @@ public class VerifyFaceBookLink extends TestBase {
 			log.info("****verifyFaceBookLink started****");
 			driver.findElement(By.xpath(".//*[@id='footer']/div[2]/section/div/div[1]/div[1]/ul/li[1]/a")).click();
 			Set<String> window = driver.getWindowHandles();
-			String parentWindow = window.iterator().next();
-			String childWindow = window.iterator().next();
+			Iterator<String> itr = window.iterator();
+			String parentWindow = itr.next();
+			String childWindow = itr.next();
 			System.out.println(window);
 			System.out.println(window.size());
 			driver.switchTo().window(childWindow);

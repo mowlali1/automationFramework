@@ -1,43 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Regression Suite">
-<listeners>
-<listener class-name="com.oracle.tr.customeListener.Listner"></listener>
-</listeners>
-  <test name="Regression Suite" preserve-order="true">
-    <classes>
-        <class name="com.oracle.tr.test.module1.LoginToautomationPractice"/>
-        <class name="com.oracle.tr.test.HomePageTest.VerifyNavigationMenu"/>
-        <class name="com.oracle.tr.test.HomePageTest.VerifygetYourTiresRightTextMessage"/>
-        <!-- <class name="com.oracle.tr.test.HomePageTest.VerifyFaceBookLink"/> -->
-         <class name="com.oracle.tr.test.HomePageTest.VerifyTotalLinksOfHomePage"/>
-         <class name="com.oracle.tr.test.HomePageTest.VerifyWhyTireRackLinks"/>
-    </classes>
-  </test> <!-- Test -->
- <!--  
-  <test name="VerifyNavigationMenu">
-    <classes>
-        
-    </classes>
-  </test> Test
-  <test name="VerifygetYourTiresRightTextMessage">
-    <classes>
-        
-    </classes>
-  </test> Test
-  <test name="VerifyFaceBookLink">
-    <classes>
-        
-    </classes>
-  </test> Test
-  <test name="VerifyTotalLinksOfHomePage">
-    <classes>
-       
-    </classes>
-  </test> Test
-  <test name="VerifyWhyTireRackLinks">
-    <classes>
-        
-    </classes>
-  </test> Test -->
-</suite> <!-- Suite -->
+	<listeners>
+		<listener class-name="com.oracle.tr.customeListener.Listner"></listener>
+	</listeners>
+	<test name="Regression Suite" preserve-order="true">
+		<classes>
+		<!-- 	<class name="com.oracle.tr.test.module1.LoginToautomationPractice" /> -->
+		</classes>
+	</test>
+	<test name="VerifyNavigationMenu">
+		<classes>
+			<class name="com.oracle.tr.test.HomePageTest.VerifyNavigationMenu" />
+		</classes>
+	</test>
+	<test name="VerifygetYourTiresRightTextMessage">
+		<classes>
+			<class
+				name="com.oracle.tr.test.HomePageTest.VerifygetYourTiresRightTextMessage" />
+		</classes>
+	</test>
+	<test name="VerifyFaceBookLink">
+		<classes>
+			<class name="com.oracle.tr.test.HomePageTest.VerifyFaceBookLink" />
+		</classes>
+	</test>
+	<test name="VerifyTotalLinksOfHomePage">
+		<classes>
+			<class name="com.oracle.tr.test.HomePageTest.VerifyTotalLinksOfHomePage" />
+		</classes>
+	</test>
+	<test name="VerifyWhyTireRackLinks">
+		<classes>
+			<class name="com.oracle.tr.test.HomePageTest.VerifyWhyTireRackLinks" />
+		</classes>
+	</test>
+</suite>
