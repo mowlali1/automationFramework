@@ -1,4 +1,4 @@
-package com.oracle.tr.test.module3;
+package com.oracle.tr.test.buyProduct;
 
 import org.testng.annotations.BeforeMethod;
 
