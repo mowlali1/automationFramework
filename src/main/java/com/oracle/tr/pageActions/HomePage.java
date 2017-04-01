@@ -102,6 +102,13 @@ public class HomePage extends TestBase{
 		return whyTireRack.size();
 	}
 	
+
+	
+	public void clickOnMakeDropDown() throws InterruptedException{
+		driver.findElement(By.xpath("//*[@id='shopByVehicle-search-change']/div[1]/div[1]/button")).click();
+		log.info("clicked on make dropdwon");
+		Thread.sleep(2000);
+	}
 	public void selectMake(String make) throws InterruptedException{
 		List<WebElement> makeitems = driver.findElements(By.xpath(".//*[@id='shopByVehicle-search-change']/div[1]/div[1]/div/ul[1]/li"));
 		Iterator<WebElement> itr = makeitems.iterator();
@@ -116,13 +123,6 @@ public class HomePage extends TestBase{
 		}
 		
 	}
-	
-	public void clickOnMakeDropDown() throws InterruptedException{
-		driver.findElement(By.xpath("//*[@id='shopByVehicle-search-change']/div[1]/div[1]/button")).click();
-		log.info("clicked on make dropdwon");
-		Thread.sleep(2000);
-	}
-	
 	public void selectYear(String yearData) throws InterruptedException{
 		List<WebElement> year = driver.findElements(By.xpath("//*[@id='shopByVehicle-search-change']/div[1]/div[2]/div/ul/li"));
 		Iterator<WebElement> itr = year.iterator();
@@ -130,6 +130,7 @@ public class HomePage extends TestBase{
 			WebElement y = itr.next();
 			if(y.getText().equals(yearData)){
 				y.click();
+				log.info("year is selected:-"+yearData);
 				Thread.sleep(2000);
 				break;
 			}
@@ -138,11 +139,13 @@ public class HomePage extends TestBase{
 	}
 	
 	public void selectModel(String model) throws InterruptedException{
-		List<WebElement> m = driver.findElements(By.xpath("//*[@id='shopByVehicle-search-change']/div[1]/div[3]/div/ul/li"));
+		driver.findElement(By.xpath("//*[@id='shopByVehicle-search-change']/div[1]/div[3]/button")).click();
+		List<WebElement> m = driver.findElements(By.xpath("//*[@class='greyHover']"));
 		Iterator<WebElement> itr = m.iterator();
 		while(itr.hasNext()){
 			WebElement y = itr.next();
-			if(y.getText().equals(model)){
+			if(y.getText().equalsIgnoreCase(model)){
+				System.out.println(y.getText());
 				y.click();
 				log.info("model is selected:-"+model);
 				Thread.sleep(2000);
@@ -161,7 +164,7 @@ public class HomePage extends TestBase{
 		driver.findElement(By.xpath(".//*[@id='shopByVehicle-search-change']/div[7]/div/div/button")).click();
 		log.info("clicked on I am shopping for drop down");
 		Thread.sleep(2000);
-		List<WebElement> it = driver.findElements(By.xpath("//*[@id='shopByVehicle-search-change']/div[7]/div/div/div/ul/li"));
+		List<WebElement> it = driver.findElements(By.xpath(".//*[@id='shopByVehicle-search-change']/div[7]/div/div/div/ul[1]/li"));
 		Iterator<WebElement> itr = it.iterator();
 		while(itr.hasNext()){
 			WebElement ite = itr.next();

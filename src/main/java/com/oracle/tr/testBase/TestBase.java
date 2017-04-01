@@ -106,7 +106,7 @@ public class TestBase {
 
 	public void expliciteWait(WebElement element, int timeToWaitInSec) {
 		WebDriverWait wait = new WebDriverWait(driver, timeToWaitInSec);
-		//wait.until(ExpectedConditions.visibilityOf(element));
+		wait.until(ExpectedConditions.visibilityOf(element));
 		
 	}
 
