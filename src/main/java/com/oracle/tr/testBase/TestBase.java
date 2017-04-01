@@ -1,19 +1,15 @@
 package com.oracle.tr.testBase;
-
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
 import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
-import java.util.NoSuchElementException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
+
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
@@ -24,10 +20,10 @@ import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.hssf.util.HSSFColor;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -36,10 +32,10 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-import com.gargoylesoftware.htmlunit.javascript.background.JavaScriptExecutor;
 import com.google.common.base.Function;
 import com.oracle.tr.excelReader.Xls_Reader;
 
+@SuppressWarnings("unused")
 public class TestBase {
 	public static WebDriver driver;
 	public Properties OR;
@@ -110,8 +106,10 @@ public class TestBase {
 
 	public void expliciteWait(WebElement element, int timeToWaitInSec) {
 		WebDriverWait wait = new WebDriverWait(driver, timeToWaitInSec);
-		wait.until(ExpectedConditions.visibilityOf(element));
+		//wait.until(ExpectedConditions.visibilityOf(element));
+		
 	}
+
 
 	public WebElement fluentWait(final WebElement webElement, int timeinsec) {
 		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(timeinsec, TimeUnit.SECONDS)

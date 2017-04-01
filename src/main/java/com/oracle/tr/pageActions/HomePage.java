@@ -6,11 +6,13 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import com.oracle.tr.testBase.TestBase;
 
@@ -99,6 +101,82 @@ public class HomePage extends TestBase{
 		log.info("getting all links of WHY TIRE RACK?");
 		return whyTireRack.size();
 	}
-
-
+	
+	public void selectMake(String make) throws InterruptedException{
+		List<WebElement> makeitems = driver.findElements(By.xpath(".//*[@id='shopByVehicle-search-change']/div[1]/div[1]/div/ul[1]/li"));
+		Iterator<WebElement> itr = makeitems.iterator();
+		while(itr.hasNext()){
+			WebElement text = itr.next();
+			if(text.getText().equals(make)){
+				log.info("selecting make as:-"+make);
+				text.click();
+				Thread.sleep(2000);
+				break;
+			}
+		}
+		
+	}
+	
+	public void clickOnMakeDropDown() throws InterruptedException{
+		driver.findElement(By.xpath("//*[@id='shopByVehicle-search-change']/div[1]/div[1]/button")).click();
+		log.info("clicked on make dropdwon");
+		Thread.sleep(2000);
+	}
+	
+	public void selectYear(String yearData) throws InterruptedException{
+		List<WebElement> year = driver.findElements(By.xpath("//*[@id='shopByVehicle-search-change']/div[1]/div[2]/div/ul/li"));
+		Iterator<WebElement> itr = year.iterator();
+		while(itr.hasNext()){
+			WebElement y = itr.next();
+			if(y.getText().equals(yearData)){
+				y.click();
+				Thread.sleep(2000);
+				break;
+			}
+		}
+		
+	}
+	
+	public void selectModel(String model) throws InterruptedException{
+		List<WebElement> m = driver.findElements(By.xpath("//*[@id='shopByVehicle-search-change']/div[1]/div[3]/div/ul/li"));
+		Iterator<WebElement> itr = m.iterator();
+		while(itr.hasNext()){
+			WebElement y = itr.next();
+			if(y.getText().equals(model)){
+				y.click();
+				log.info("model is selected:-"+model);
+				Thread.sleep(2000);
+				break;
+			}	
+		}
+	}
+	
+	public void selectPin(String pin) throws InterruptedException{
+		driver.findElement(By.xpath("//*[@id='shopByVehicle-search-change']/div[4]/input")).sendKeys(pin);
+		log.info("pin is selected:-"+pin);
+		Thread.sleep(2000);
+	}
+	
+	public void selectIamshoppingFor(String items) throws InterruptedException{
+		driver.findElement(By.xpath(".//*[@id='shopByVehicle-search-change']/div[7]/div/div/button")).click();
+		log.info("clicked on I am shopping for drop down");
+		Thread.sleep(2000);
+		List<WebElement> it = driver.findElements(By.xpath("//*[@id='shopByVehicle-search-change']/div[7]/div/div/div/ul/li"));
+		Iterator<WebElement> itr = it.iterator();
+		while(itr.hasNext()){
+			WebElement ite = itr.next();
+			if(ite.getText().equals(items)){
+				ite.click();
+				log.info("items is selected:-"+items);
+				Thread.sleep(2000);
+				break;
+			}
+		}
+	}
+	public void clickOnViewResult() throws InterruptedException{
+		driver.findElement(By.xpath(".//*[@id='shopVehicleSearchBtn']")).click();
+		log.info("clicked on view result");
+		Thread.sleep(2000);
+	}
+	
 }
