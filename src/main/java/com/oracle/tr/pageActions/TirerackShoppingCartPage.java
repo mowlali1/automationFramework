@@ -11,6 +11,11 @@ import com.oracle.tr.testBase.TestBase;
 
 public class TirerackShoppingCartPage extends TestBase{
 	
+	TirerackHomePage homepage;
+	TirerackSelectTireSizePage selectTireSize;
+	TirerackTireSearchResultsPage testsearchResult;
+	TirerackShoppingCartPage shoppingCartPage;
+	
 	public void delectCartItems() throws InterruptedException{
 		int i = 1;
 		List<WebElement> items = driver.findElements(By.xpath("//a[contains(text(),'Cancel')]"));
@@ -28,6 +33,24 @@ public class TirerackShoppingCartPage extends TestBase{
 		String text = driver.findElement(By.xpath("//p[contains(text(),'You currently have no items in your cart.')]")).getText();
 		log.info("You currently have no items in your cart verified");
 		Assert.assertEquals(text, "You currently have no items in your cart.");
+	}
+	
+	public void addItemsToCart(String make,String year) throws InterruptedException{
+		homepage = new TirerackHomePage(driver);
+		selectTireSize = new TirerackSelectTireSizePage();
+		testsearchResult = new TirerackTireSearchResultsPage();
+		shoppingCartPage = new TirerackShoppingCartPage();
+		homepage.clickOnMakeDropDown();
+		homepage.selectMake(make);
+		homepage.selectYear(year);
+		homepage.selectModel("ILX");
+		homepage.selectPin("99501");
+		homepage.selectIamshoppingFor("Tires");
+		homepage.clickOnViewResult();
+		selectTireSize.clickOnOriginalEquipmentWheelDiameter_17();
+		testsearchResult.selectQuantity("2");
+		testsearchResult.clickOnAddToCart();
+		testsearchResult.clickOnKeepInCart();
 	}
 
 }

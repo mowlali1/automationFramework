@@ -24,8 +24,10 @@ public class AutomationPracticeTestBuyProduct extends TestBase{
 	@Test
 	public void verifyBuyProduct(){
 		driver.findElement(By.xpath(".//*[@id='header_logo']/a/img")).click();
+		
 		Actions action = new Actions(driver);
 		action.moveToElement(driver.findElement(By.xpath(".//*[@id='homefeatured']/li[1]/div/div[1]/div/a[1]/img"))).build().perform();
+		
 		driver.findElement(By.xpath(".//*[@id='homefeatured']/li[1]/div/div[2]/div[2]/a[1]/span")).click();
 		driver.findElement(By.xpath(".//*[@id='layer_cart']/div[1]/div[2]/div[4]/a/span")).click();
 		driver.findElement(By.xpath(".//*[@id='center_column']/p[2]/a[1]/span")).click();

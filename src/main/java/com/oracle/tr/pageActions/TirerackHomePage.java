@@ -108,6 +108,7 @@ public class TirerackHomePage extends TestBase{
 		log.info("clicked on make dropdwon");
 		Thread.sleep(2000);
 	}
+	
 	public void selectMake(String make) throws InterruptedException{
 		List<WebElement> makeitems = driver.findElements(By.xpath(".//*[@id='shopByVehicle-search-change']/div[1]/div[1]/div/ul[1]/li"));
 		Iterator<WebElement> itr = makeitems.iterator();
@@ -120,8 +121,8 @@ public class TirerackHomePage extends TestBase{
 				break;
 			}
 		}
-		
 	}
+	
 	public void selectYear(String yearData) throws InterruptedException{
 		List<WebElement> year = driver.findElements(By.xpath("//*[@id='shopByVehicle-search-change']/div[1]/div[2]/div/ul/li"));
 		Iterator<WebElement> itr = year.iterator();

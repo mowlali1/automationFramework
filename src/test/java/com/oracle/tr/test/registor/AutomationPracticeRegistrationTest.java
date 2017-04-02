@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.math.BigDecimal;
 
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
-import org.testng.AssertJUnit;
 import org.testng.SkipException;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
