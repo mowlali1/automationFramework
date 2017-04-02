@@ -9,30 +9,30 @@
 		<!-- 	<class name="com.oracle.tr.test.module1.LoginToautomationPractice" /> -->
 		</classes>
 	</test>
-	<test name="VerifyNavigationMenu">
+	<test name="TirerackVerifyNavigationMenu">
 		<classes>
-			<class name="com.oracle.tr.test.HomePageTest.VerifyNavigationMenu" />
+			<class name="com.oracle.tr.test.HomePageTest.TirerackVerifyNavigationMenu" />
 		</classes>
 	</test>
-	<test name="VerifygetYourTiresRightTextMessage">
+	<test name="TirerackVerifygetYourTiresRightTextMessage">
 		<classes>
 			<class
-				name="com.oracle.tr.test.HomePageTest.VerifygetYourTiresRightTextMessage" />
+				name="com.oracle.tr.test.HomePageTest.TirerackVerifygetYourTiresRightTextMessage" />
 		</classes>
 	</test>
-	<test name="VerifyFaceBookLink">
+	<test name="TirerackVerifyFaceBookLink">
 		<classes>
-			<class name="com.oracle.tr.test.HomePageTest.VerifyFaceBookLink" />
+			<class name="com.oracle.tr.test.HomePageTest.TirerackVerifyFaceBookLink" />
 		</classes>
 	</test>
-	<test name="VerifyTotalLinksOfHomePage">
+	<test name="TirerackVerifyTotalLinksOfHomePage">
 		<classes>
-			<class name="com.oracle.tr.test.HomePageTest.VerifyTotalLinksOfHomePage" />
+			<class name="com.oracle.tr.test.HomePageTest.TirerackVerifyTotalLinksOfHomePage" />
 		</classes>
 	</test>
-	<test name="VerifyWhyTireRackLinks">
+	<test name="TirerackVerifyWhyTireRackLinks">
 		<classes>
-			<class name="com.oracle.tr.test.HomePageTest.VerifyWhyTireRackLinks" />
+			<class name="com.oracle.tr.test.HomePageTest.TirerackVerifyWhyTireRackLinks" />
 		</classes>
 	</test>
 </suite>
