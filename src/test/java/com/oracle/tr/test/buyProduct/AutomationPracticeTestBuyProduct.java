@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 import com.oracle.tr.testBase.TestBase;
 
 
-public class TestBuyProduct extends TestBase{
+public class AutomationPracticeTestBuyProduct extends TestBase{
 	
 	@BeforeClass
 	public void setUp() throws IOException {

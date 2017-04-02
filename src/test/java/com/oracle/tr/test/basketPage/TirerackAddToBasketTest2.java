@@ -21,7 +21,7 @@ import com.oracle.tr.pageActions.TirerackShoppingCartPage;
 import com.oracle.tr.pageActions.TirerackTireSearchResultsPage;
 import com.oracle.tr.testBase.TestBase;
 
-public class AddToBasket2 extends TestBase{
+public class TirerackAddToBasketTest2 extends TestBase{
 	TirerackHomePage homepage;
 	TirerackSelectTireSizePage selectTireSize;
 	TirerackTireSearchResultsPage testsearchResult;

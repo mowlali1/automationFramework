@@ -13,9 +13,9 @@ import com.oracle.tr.pageActions.AutomationPracticeLoginPage;
 
 import com.oracle.tr.testBase.TestBase;
 
-public class VerifyNavigationMenu extends TestBase {
+public class TirerackVerifyNavigationMenu extends TestBase {
 	AutomationPracticeLoginPage login;
-	public static Logger log = Logger.getLogger(VerifyNavigationMenu.class.getName());
+	public static Logger log = Logger.getLogger(TirerackVerifyNavigationMenu.class.getName());
 	TirerackHomePage homepage;
 
 	@BeforeClass

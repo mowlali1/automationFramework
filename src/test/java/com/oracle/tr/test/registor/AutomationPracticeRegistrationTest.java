@@ -16,8 +16,8 @@ import com.oracle.tr.pageActions.AutomationPracticeLoginPage;
 import com.oracle.tr.pageActions.AutomationPracticeRegistration;
 import com.oracle.tr.testBase.TestBase;
 
-public class RegistrationTest extends TestBase{
-	public static Logger log = Logger.getLogger(RegistrationTest.class.getName());
+public class AutomationPracticeRegistrationTest extends TestBase{
+	public static Logger log = Logger.getLogger(AutomationPracticeRegistrationTest.class.getName());
 	AutomationPracticeRegistration reg;
 	AutomationPracticeLoginPage login;
 	int i = 0;

@@ -12,8 +12,8 @@ import org.testng.annotations.Test;
 import com.oracle.tr.pageActions.TirerackHomePage;
 import com.oracle.tr.testBase.TestBase;
 
-public class VerifygetYourTiresRightTextMessage extends TestBase{
-	public static Logger log = Logger.getLogger(VerifygetYourTiresRightTextMessage.class.getName());
+public class TirerackVerifygetYourTiresRightTextMessage extends TestBase{
+	public static Logger log = Logger.getLogger(TirerackVerifygetYourTiresRightTextMessage.class.getName());
 	TirerackHomePage homepage;
 	
 	@BeforeClass

@@ -13,9 +13,9 @@ import org.testng.annotations.Test;
 import com.oracle.tr.pageActions.TirerackHomePage;
 import com.oracle.tr.testBase.TestBase;
 
-public class VerifyTotalLinksOfHomePage extends TestBase {
+public class TirerackVerifyTotalLinksOfHomePage extends TestBase {
 	TirerackHomePage homepage;
-	public static Logger log = Logger.getLogger(VerifyTotalLinksOfHomePage.class.getName());
+	public static Logger log = Logger.getLogger(TirerackVerifyTotalLinksOfHomePage.class.getName());
 
 	@BeforeClass
 	public void setUp() throws IOException {

@@ -13,8 +13,8 @@ import org.testng.annotations.Test;
 
 import com.oracle.tr.testBase.TestBase;
 
-public class VerifyFaceBookLink extends TestBase {
-	public static Logger log = Logger.getLogger(VerifyNavigationMenu.class.getName());
+public class TirerackVerifyFaceBookLink extends TestBase {
+	public static Logger log = Logger.getLogger(TirerackVerifyNavigationMenu.class.getName());
 
 	@BeforeClass
 	public void setUp() throws IOException {

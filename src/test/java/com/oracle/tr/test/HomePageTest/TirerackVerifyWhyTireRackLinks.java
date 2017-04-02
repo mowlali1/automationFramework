@@ -11,9 +11,9 @@ import org.testng.annotations.Test;
 import com.oracle.tr.pageActions.TirerackHomePage;
 import com.oracle.tr.testBase.TestBase;
 
-public class VerifyWhyTireRackLinks extends TestBase{
+public class TirerackVerifyWhyTireRackLinks extends TestBase{
 	
-	public static Logger log = Logger.getLogger(VerifyWhyTireRackLinks.class.getName());
+	public static Logger log = Logger.getLogger(TirerackVerifyWhyTireRackLinks.class.getName());
 	TirerackHomePage homepage;
 	
 	@BeforeClass

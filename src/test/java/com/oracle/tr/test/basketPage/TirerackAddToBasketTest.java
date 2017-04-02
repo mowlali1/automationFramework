@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 
 import com.oracle.tr.testBase.TestBase;
 
-public class AddToBasket extends TestBase {
+public class TirerackAddToBasketTest extends TestBase {
 
 	@BeforeClass
 	public void setUp() throws IOException {

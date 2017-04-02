@@ -9,12 +9,12 @@ import org.testng.annotations.Test;
 
 import com.oracle.tr.pageActions.TirerackHomePage;
 import com.oracle.tr.pageActions.AutomationPracticeLoginPage;
-import com.oracle.tr.test.HomePageTest.VerifyNavigationMenu;
+import com.oracle.tr.test.HomePageTest.TirerackVerifyNavigationMenu;
 import com.oracle.tr.testBase.TestBase;
 
 public class Dummy extends TestBase{
 //http://bhanupratapcorejavaprogramming.blogspot.in/
-	public static Logger log = Logger.getLogger(VerifyNavigationMenu.class.getName());
+	public static Logger log = Logger.getLogger(TirerackVerifyNavigationMenu.class.getName());
 
 	@BeforeClass
 	public void setUp() throws IOException{
