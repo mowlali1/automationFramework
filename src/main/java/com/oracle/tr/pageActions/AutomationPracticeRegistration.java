@@ -15,8 +15,8 @@ import org.testng.Assert;
 import com.oracle.tr.testBase.TestBase;
 
 
-public class Registration extends TestBase {
-	private final static Logger log = Logger.getLogger(Registration.class.getName());
+public class AutomationPracticeRegistration extends TestBase {
+	private final static Logger log = Logger.getLogger(AutomationPracticeRegistration.class.getName());
 
 	WebDriver driver;
 
@@ -91,7 +91,7 @@ public class Registration extends TestBase {
 	@FindBy(className="logout")
 	WebElement logout;
 
-	public Registration(WebDriver driver) {
+	public AutomationPracticeRegistration(WebDriver driver) {
 		// This initElements method will create all WebElements
 		this.driver = driver;
 		PageFactory.initElements(this.driver,this);

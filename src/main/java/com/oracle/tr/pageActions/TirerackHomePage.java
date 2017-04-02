@@ -12,12 +12,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
-
 import com.oracle.tr.testBase.TestBase;
 
-public class HomePage extends TestBase{
-	public static Logger log = Logger.getLogger(HomePage.class.getName());
+public class TirerackHomePage extends TestBase{
+	public static Logger log = Logger.getLogger(TirerackHomePage.class.getName());
+	
 	@FindBy(xpath="//*[@id='pageLinks']/ul/li[1]/div/div/a")
 	WebElement tires;
 	
@@ -42,7 +41,7 @@ public class HomePage extends TestBase{
 	@FindBy(xpath="//*[@id='footer']/section/nav/ul/li[1]/ul/li")
 	List<WebElement> whyTireRack;
 	
-	public HomePage(WebDriver driver){
+	public TirerackHomePage(WebDriver driver){
 		PageFactory.initElements(driver, this);
 	}
 	

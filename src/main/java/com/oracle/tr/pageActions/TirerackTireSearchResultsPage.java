@@ -12,9 +12,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.oracle.tr.testBase.TestBase;
 
-public class TireSearchResultsPage extends TestBase{
+public class TirerackTireSearchResultsPage extends TestBase{
 	
-	public static Logger log = Logger.getLogger(TireSearchResultsPage.class.getName());
+	public static Logger log = Logger.getLogger(TirerackTireSearchResultsPage.class.getName());
 	
 	public void selectQuantity(String quantity) throws InterruptedException{
 		expliciteWait(driver.findElement(By.xpath("//*[@id='tireForm0']/div[3]/div[2]/div[2]/div[2]/ul/li[2]/div[1]/div/button")), 60);

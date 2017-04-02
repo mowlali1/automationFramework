@@ -7,8 +7,8 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.oracle.tr.pageActions.HomePage;
-import com.oracle.tr.pageActions.LoginPage;
+import com.oracle.tr.pageActions.TirerackHomePage;
+import com.oracle.tr.pageActions.AutomationPracticeLoginPage;
 import com.oracle.tr.test.HomePageTest.VerifyNavigationMenu;
 import com.oracle.tr.testBase.TestBase;
 

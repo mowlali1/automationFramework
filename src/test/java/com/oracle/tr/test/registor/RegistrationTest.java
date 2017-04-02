@@ -12,14 +12,14 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.oracle.tr.pageActions.LoginPage;
-import com.oracle.tr.pageActions.Registration;
+import com.oracle.tr.pageActions.AutomationPracticeLoginPage;
+import com.oracle.tr.pageActions.AutomationPracticeRegistration;
 import com.oracle.tr.testBase.TestBase;
 
 public class RegistrationTest extends TestBase{
 	public static Logger log = Logger.getLogger(RegistrationTest.class.getName());
-	Registration reg;
-	LoginPage login;
+	AutomationPracticeRegistration reg;
+	AutomationPracticeLoginPage login;
 	int i = 0;
 	
 	String emailAddress = "email" + System.currentTimeMillis() + "@gmail.com";
@@ -37,8 +37,8 @@ public class RegistrationTest extends TestBase{
 	@BeforeClass
 	public void setUp() throws IOException{
       init();
-     reg = new Registration(driver);
-     login = new LoginPage(driver);
+     reg = new AutomationPracticeRegistration(driver);
+     login = new AutomationPracticeLoginPage(driver);
 	}
 	
 	@DataProvider(name = "TestRegistor")

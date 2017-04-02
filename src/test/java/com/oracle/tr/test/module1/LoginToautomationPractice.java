@@ -6,17 +6,17 @@ import java.io.IOException;
 import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
-import com.oracle.tr.pageActions.LoginPage;
+import com.oracle.tr.pageActions.AutomationPracticeLoginPage;
 import com.oracle.tr.testBase.TestBase;
 
 public class LoginToautomationPractice extends TestBase{
-	LoginPage login;
+	AutomationPracticeLoginPage login;
 	public static Logger log = Logger.getLogger(LoginToautomationPractice.class.getName());
 
 	@BeforeClass
 	public void setUp() throws IOException{
       init();
-      login = new LoginPage(driver);
+      login = new AutomationPracticeLoginPage(driver);
       
 	}
 	

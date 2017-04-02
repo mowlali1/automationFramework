@@ -5,8 +5,8 @@ import org.openqa.selenium.By;
 
 import com.oracle.tr.testBase.TestBase;
 
-public class SelectTireSizePage extends TestBase{
-	public static Logger log = Logger.getLogger(SelectTireSizePage.class.getName());
+public class TirerackSelectTireSizePage extends TestBase{
+	public static Logger log = Logger.getLogger(TirerackSelectTireSizePage.class.getName());
 	
 	public void clickOnOriginalEquipmentWheelDiameter_17() throws InterruptedException{
 		driver.findElement(By.xpath(".//*[@id='oe1']/button")).click();

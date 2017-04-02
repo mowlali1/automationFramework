@@ -8,20 +8,20 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.oracle.tr.pageActions.HomePage;
-import com.oracle.tr.pageActions.LoginPage;
+import com.oracle.tr.pageActions.TirerackHomePage;
+import com.oracle.tr.pageActions.AutomationPracticeLoginPage;
 
 import com.oracle.tr.testBase.TestBase;
 
 public class VerifyNavigationMenu extends TestBase {
-	LoginPage login;
+	AutomationPracticeLoginPage login;
 	public static Logger log = Logger.getLogger(VerifyNavigationMenu.class.getName());
-	HomePage homepage;
+	TirerackHomePage homepage;
 
 	@BeforeClass
 	public void setUp() throws IOException {
 		init();
-		homepage = new HomePage(driver);
+		homepage = new TirerackHomePage(driver);
 	}
 
 	@Test

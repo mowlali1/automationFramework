@@ -9,10 +9,10 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.oracle.tr.testBase.TestBase;
 
-public class LoginPage extends TestBase {
-	private final static Logger log = Logger.getLogger(LoginPage.class.getName());
-	//WebDriver driver;
+public class AutomationPracticeLoginPage extends TestBase {
 	
+	private final static Logger log = Logger.getLogger(AutomationPracticeLoginPage.class.getName());
+
 	@FindBy(css=".login")
 	WebElement signIn;
 	
@@ -27,7 +27,7 @@ public class LoginPage extends TestBase {
 	
 	By submit = By.xpath("//*[@id='SubmitLogin']");
 	
-	public LoginPage(WebDriver driver){
+	public AutomationPracticeLoginPage(WebDriver driver){
 		PageFactory.initElements(driver, this);
 	}
 

@@ -9,7 +9,7 @@ import org.testng.Assert;
 
 import com.oracle.tr.testBase.TestBase;
 
-public class ShoppingCartPage extends TestBase{
+public class TirerackShoppingCartPage extends TestBase{
 	
 	public void delectCartItems() throws InterruptedException{
 		int i = 1;
