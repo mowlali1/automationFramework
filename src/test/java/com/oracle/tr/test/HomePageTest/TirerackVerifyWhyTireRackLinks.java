@@ -42,6 +42,7 @@ public class TirerackVerifyWhyTireRackLinks extends TestBase{
 	
 	@AfterClass
 	public void closeBrowser(){
-		driver.quit();
+		//driver.quit();
+		driver.close();
 	}
 }

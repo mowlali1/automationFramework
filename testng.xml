@@ -35,4 +35,10 @@
 			<class name="com.oracle.tr.test.HomePageTest.TirerackVerifyWhyTireRackLinks" />
 		</classes>
 	</test>
+	
+	<test name="TirerackAddToBasketTest2">
+		<classes>
+			<class name="com.oracle.tr.test.basketPage.TirerackAddToBasketTest2" />
+		</classes>
+	</test>
 </suite>

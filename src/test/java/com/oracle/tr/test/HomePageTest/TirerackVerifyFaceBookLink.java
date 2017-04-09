@@ -53,6 +53,7 @@ public class TirerackVerifyFaceBookLink extends TestBase {
 
 	@AfterClass
 	public void closeBrowser() {
-		driver.quit();
+		//driver.quit();
+		driver.close();
 	}
 }

@@ -52,6 +52,7 @@ public class TirerackHomePage extends TestBase{
 		Thread.sleep(1000);
 		
 	}
+	
 	public void mouseOverWheels() throws InterruptedException{
 		Actions action = new Actions(driver);
 		log.info("performning mouse over on wheels");
