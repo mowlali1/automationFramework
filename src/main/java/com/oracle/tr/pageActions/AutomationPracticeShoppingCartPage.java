@@ -6,7 +6,7 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import com.test.selenium.ui.testBase.TestBase;
+import com.oracle.tr.testBase.TestBase;
 
 public class AutomationPracticeShoppingCartPage extends TestBase{
 	

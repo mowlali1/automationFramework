@@ -4,7 +4,8 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
-import com.test.selenium.ui.testBase.TestBase;
+
+import com.oracle.tr.testBase.TestBase;
 
 public class AutomationPracticeProductDetails extends TestBase {
 	

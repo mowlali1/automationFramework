@@ -11,7 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.test.selenium.ui.testBase.TestBase;
+import com.oracle.tr.testBase.TestBase;
 
 public class AutomationPracticeRegistrationPage extends TestBase{
 	

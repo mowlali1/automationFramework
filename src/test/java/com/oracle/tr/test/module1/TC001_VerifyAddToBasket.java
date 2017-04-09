@@ -6,13 +6,14 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.test.selenium.ui.pageActions.HomePage;
-import com.test.selenium.ui.pageActions.ProductDetails;
-import com.test.selenium.ui.testBase.TestBase;
+import com.oracle.tr.pageActions.AutomationPracticeHomePage;
+import com.oracle.tr.pageActions.AutomationPracticeProductDetails;
+import com.oracle.tr.testBase.TestBase;
+
 
 public class TC001_VerifyAddToBasket extends TestBase{
-	HomePage homePage;
-	ProductDetails productDetails;
+	AutomationPracticeHomePage homePage;
+	AutomationPracticeProductDetails productDetails;
 	
 	@BeforeClass
 	public void setUp() throws IOException{
@@ -21,8 +22,8 @@ public class TC001_VerifyAddToBasket extends TestBase{
 	
 	@Test
 	public void verifyAddToBasket() throws InterruptedException{
-		homePage = new HomePage(driver);
-		productDetails = new ProductDetails();
+		homePage = new AutomationPracticeHomePage(driver);
+		productDetails = new AutomationPracticeProductDetails();
 		
 		try {
 			homePage.mouseOver(homePage.women);
