@@ -77,30 +77,61 @@ public class TestBase {
 	 * @return browser driver
 	 */
 	public WebDriver selectBrowser(String browser) {
-		if (browser.equalsIgnoreCase("firefox")) {
-			System.setProperty("webdriver.firefox.marionette", "/driver/geckodriver");
-			driver = new FirefoxDriver();
-			driver.navigate().to(OR.getProperty("url"));
-			driver.manage().window().maximize();
-			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-			return driver;
-		} else if (browser.equalsIgnoreCase("chrome")) {
-			https://sites.google.com/a/chromium.org/chromedriver/downloads
-			log.info("creating oject of:-" + browser);
-			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/driver/chromedriver");
-	        //ChromeOptions options = new ChromeOptions();
-	        //options.addArguments("--test-type");
-	        driver = new ChromeDriver();
-			driver.navigate().to(OR.getProperty("url"));
-			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-			driver.manage().window().maximize();
-			return driver;
-		} else if (browser.equals("ie") || browser.equals("IE")) {
-			log.info("creating oject of:-" + browser);
-			driver = new InternetExplorerDriver();
-			driver.manage().window().maximize();
-			return driver;
+		if(System.getProperty("os.name").contains("Mac OS")){
+			if (browser.equalsIgnoreCase("firefox")) {
+				// Dowmload Location
+				//https://github.com/mozilla/geckodriver/releases/tag/v0.15.0 
+				System.setProperty("webdriver.firefox.marionette", "/driver/geckodriver");
+				driver = new FirefoxDriver();
+				driver.navigate().to(OR.getProperty("url"));
+				driver.manage().window().maximize();
+				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+				return driver;
+			} else if (browser.equalsIgnoreCase("chrome")) {
+				//https://sites.google.com/a/chromium.org/chromedriver/downloads
+				log.info("creating oject of:-" + browser);
+				System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/driver/chromedriver");
+		        //ChromeOptions options = new ChromeOptions();
+		        //options.addArguments("--test-type");
+		        driver = new ChromeDriver();
+				driver.navigate().to(OR.getProperty("url"));
+				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+				driver.manage().window().maximize();
+				return driver;
+			} else if (browser.equals("ie") || browser.equals("IE")) {
+				log.info("creating oject of:-" + browser);
+				driver = new InternetExplorerDriver();
+				driver.manage().window().maximize();
+				return driver;
+			}
 		}
+		else if(System.getProperty("os.name").contains("windwo")){
+			if (browser.equalsIgnoreCase("firefox")) {
+				System.setProperty("webdriver.gecko.driver", "/driver/geckodriver.exe");
+				driver = new FirefoxDriver();
+				driver.navigate().to(OR.getProperty("url"));
+				driver.manage().window().maximize();
+				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+				return driver;
+			} else if (browser.equalsIgnoreCase("chrome")) {
+				https://sites.google.com/a/chromium.org/chromedriver/downloads
+				log.info("creating oject of:-" + browser);
+				System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/driver/chromedriver.exe");
+		        //ChromeOptions options = new ChromeOptions();
+		        //options.addArguments("--test-type");
+		        driver = new ChromeDriver();
+				driver.navigate().to(OR.getProperty("url"));
+				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+				driver.manage().window().maximize();
+				return driver;
+			} else if (browser.equals("ie") || browser.equals("IE")) {
+				log.info("creating oject of:-" + browser);
+				driver = new InternetExplorerDriver();
+				driver.manage().window().maximize();
+				return driver;
+			}
+		}
+		
 		return null;
 	}
 
